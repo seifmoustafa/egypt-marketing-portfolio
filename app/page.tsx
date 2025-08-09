@@ -139,10 +139,10 @@ export default function Portfolio() {
         }`}
       >
         <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between flex-nowrap">
+          <div className="flex items-center justify-between">
             {/* Enhanced Logo with Better Visibility */}
             <motion.div
-              className="flex items-center gap-5 flex-nowrap"
+              className="flex items-center gap-5"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
@@ -189,7 +189,7 @@ export default function Portfolio() {
               {/* Enhanced Company Name with Better Contrast */}
               <div className="hidden md:block">
                 <motion.h1
-                  className={`font-bold transition-all duration-500 whitespace-nowrap ${
+                  className={`font-bold transition-all duration-500 ${
                     isScrolled
                       ? "text-lg bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent"
                       : "text-xl text-white drop-shadow-2xl"
@@ -200,7 +200,7 @@ export default function Portfolio() {
                   {companyInfo.name}
                 </motion.h1>
                 <motion.p
-                  className={`text-sm font-medium transition-all duration-500 whitespace-nowrap ${
+                  className={`text-sm font-medium transition-all duration-500 ${
                     isScrolled ? "text-blue-600" : "text-blue-200 drop-shadow-lg"
                   }`}
                   initial={{ opacity: 0, y: 5 }}
@@ -214,9 +214,9 @@ export default function Portfolio() {
             </motion.div>
 
             {/* Enhanced Desktop Navigation with Better Visibility */}
-            <nav className="hidden xl:flex items-center gap-2 flex-nowrap">
+            <nav className="hidden xl:flex items-center gap-2">
               <div
-                className={`flex items-center gap-2 flex-nowrap rounded-full px-3 py-2 transition-all duration-500 ${
+                className={`flex items-center gap-2 rounded-full px-3 py-2 transition-all duration-500 ${
                   isScrolled
                     ? "bg-gray-50/80 backdrop-blur-xl shadow-xl border border-gray-200/50"
                     : "bg-white/25 backdrop-blur-2xl shadow-2xl border border-white/40"
@@ -226,7 +226,7 @@ export default function Portfolio() {
                   <motion.button
                     key={s.id}
                     onClick={() => scrollToSection(s.id)}
-                    className={`px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden group whitespace-nowrap ${
+                    className={`px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden group ${
                       activeSection === s.id
                         ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
                         : isScrolled
@@ -264,7 +264,7 @@ export default function Portfolio() {
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
 
                 <span
-                  className="relative z-10 flex items-center gap-3 whitespace-nowrap"
+                  className="relative z-10 flex items-center gap-3"
                   style={{
                     textShadow: isScrolled ? "none" : "0 1px 2px rgba(0,0,0,0.3)",
                   }}
@@ -541,11 +541,11 @@ export default function Portfolio() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 1.2 }}
-              className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mt-20 items-stretch"
+              className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mt-20"
             >
-              <FloatingCard className="group h-full">
-                <Card className="h-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-500">
-                  <CardContent className="p-8 text-center h-full flex flex-col justify-between">
+              <FloatingCard className="group">
+                <Card className="bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-500">
+                  <CardContent className="p-8 text-center">
                     <Calendar className="w-12 h-12 text-blue-400 mx-auto mb-4" />
                     <h3 className="text-2xl font-bold mb-2">
                       {heroSectionData.sinceYear} <AnimatedCounter end={companyInfo.foundedYear} />
@@ -555,9 +555,9 @@ export default function Portfolio() {
                 </Card>
               </FloatingCard>
 
-              <FloatingCard className="group h-full" delay={0.1}>
-                <Card className="h-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-500">
-                  <CardContent className="p-8 text-center h-full flex flex-col justify-between">
+              <FloatingCard className="group" delay={0.1}>
+                <Card className="bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-500">
+                  <CardContent className="p-8 text-center">
                     <Crown className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
                     <h3 className="text-2xl font-bold mb-2">
                       {heroSectionData.moreThan} <AnimatedCounter end={companyInfo.totalProjects} suffix="+" /> {heroSectionData.projectText}
