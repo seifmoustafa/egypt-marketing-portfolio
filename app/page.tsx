@@ -189,7 +189,7 @@ export default function Portfolio() {
               {/* Enhanced Company Name with Better Contrast */}
               <div className="hidden md:block">
                 <motion.h1
-                  className={`font-bold transition-all duration-500 ${
+                  className={`font-bold transition-all duration-500 whitespace-nowrap ${
                     isScrolled
                       ? "text-lg bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent"
                       : "text-xl text-white drop-shadow-2xl"
@@ -200,7 +200,7 @@ export default function Portfolio() {
                   {companyInfo.name}
                 </motion.h1>
                 <motion.p
-                  className={`text-sm font-medium transition-all duration-500 ${
+                  className={`text-sm font-medium transition-all duration-500 whitespace-nowrap ${
                     isScrolled ? "text-blue-600" : "text-blue-200 drop-shadow-lg"
                   }`}
                   initial={{ opacity: 0, y: 5 }}
@@ -226,7 +226,7 @@ export default function Portfolio() {
                   <motion.button
                     key={s.id}
                     onClick={() => scrollToSection(s.id)}
-                    className={`px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden group ${
+                    className={`px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden group whitespace-nowrap ${
                       activeSection === s.id
                         ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
                         : isScrolled
@@ -264,7 +264,7 @@ export default function Portfolio() {
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
 
                 <span
-                  className="relative z-10 flex items-center gap-3"
+                  className="relative z-10 flex items-center gap-3 whitespace-nowrap"
                   style={{
                     textShadow: isScrolled ? "none" : "0 1px 2px rgba(0,0,0,0.3)",
                   }}
@@ -541,11 +541,11 @@ export default function Portfolio() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 1.2 }}
-              className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mt-20"
+              className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mt-20 items-stretch"
             >
-              <FloatingCard className="group">
-                <Card className="bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-500">
-                  <CardContent className="p-8 text-center">
+              <FloatingCard className="group h-full">
+                <Card className="h-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-500">
+                  <CardContent className="p-8 text-center h-full flex flex-col justify-between">
                     <Calendar className="w-12 h-12 text-blue-400 mx-auto mb-4" />
                     <h3 className="text-2xl font-bold mb-2">
                       {heroSectionData.sinceYear} <AnimatedCounter end={companyInfo.foundedYear} />
@@ -555,9 +555,9 @@ export default function Portfolio() {
                 </Card>
               </FloatingCard>
 
-              <FloatingCard className="group" delay={0.1}>
-                <Card className="bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-500">
-                  <CardContent className="p-8 text-center">
+              <FloatingCard className="group h-full" delay={0.1}>
+                <Card className="h-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-500">
+                  <CardContent className="p-8 text-center h-full flex flex-col justify-between">
                     <Crown className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
                     <h3 className="text-2xl font-bold mb-2">
                       {heroSectionData.moreThan} <AnimatedCounter end={companyInfo.totalProjects} suffix="+" /> {heroSectionData.projectText}
