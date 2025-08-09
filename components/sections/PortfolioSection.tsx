@@ -20,13 +20,13 @@ export function PortfolioSection() {
         >
           <div className="inline-flex items-center gap-3 bg-yellow-100 text-yellow-800 px-6 py-3 rounded-full text-sm font-semibold mb-8">
             <Award className="w-5 h-5" />
-            إنجازاتنا
+            {portfolioSectionData.badge}
           </div>
           <h2 className="text-5xl md:text-7xl font-bold mb-8">
-            <GradientText gradient="from-yellow-600 to-orange-600">سابقة أعمالنا</GradientText>
+            <GradientText gradient="from-yellow-600 to-orange-600">{portfolioSectionData.title}</GradientText>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            على مدار أكثر من {companyInfo.totalProjects} مشروع في السوق المصري والعربي
+            {portfolioSectionData.subtitle.replace('{totalProjects}', companyInfo.totalProjects.toString())}
           </p>
         </motion.div>
 
@@ -34,8 +34,7 @@ export function PortfolioSection() {
           <Card className="bg-gradient-to-br from-gray-50 to-blue-50 border-0 shadow-2xl">
             <CardContent className="p-12 md:p-16">
               <p className="text-xl text-gray-700 text-center mb-16 leading-relaxed">
-                عملنا مع مجموعة واسعة من العملاء في مختلف القطاعات، مما أكسبنا خبرة عملية عميقة، ومهارة في تخصيص
-                الحلول التسويقية بما يتناسب مع طبيعة كل نشاط.
+                {portfolioSectionData.description}
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">

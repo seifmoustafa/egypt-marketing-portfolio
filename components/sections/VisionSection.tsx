@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { FloatingCard } from "@/components/ui/floating-card"
 import { GradientText } from "@/components/ui/gradient-text"
 import { ParallaxSection } from "@/components/ui/parallax-section"
-import { contentSections } from "@/lib/mockdata"
+import { contentSections, visionSectionData } from "@/lib/mockdata"
 
 export function VisionSection() {
   return (
@@ -26,7 +26,7 @@ export function VisionSection() {
         >
           <div className="inline-flex items-center gap-3 bg-blue-100 text-blue-800 px-6 py-3 rounded-full text-sm font-semibold mb-8">
             <Eye className="w-5 h-5" />
-            رؤيتنا للمستقبل
+            {visionSectionData.badge}
           </div>
           <h2 className="text-5xl md:text-7xl font-bold mb-8">
             <GradientText>{contentSections.vision.title}</GradientText>

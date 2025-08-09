@@ -5,7 +5,7 @@ import { Sparkles, CheckCircle } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { FloatingCard } from "@/components/ui/floating-card"
 import { GradientText } from "@/components/ui/gradient-text"
-import { designServices } from "@/lib/mockdata"
+import { designServices, designSectionData } from "@/lib/mockdata"
 
 export function DesignSection() {
   return (
@@ -19,13 +19,13 @@ export function DesignSection() {
         >
           <div className="inline-flex items-center gap-3 bg-purple-100 text-purple-800 px-6 py-3 rounded-full text-sm font-semibold mb-8">
             <Sparkles className="w-5 h-5" />
-            التصميم الإبداعي
+            {designSectionData.badge}
           </div>
           <h2 className="text-5xl md:text-7xl font-bold mb-8">
-            <GradientText gradient="from-purple-600 to-indigo-600">التصميم الإبداعي والجرافيك</GradientText>
+            <GradientText gradient="from-purple-600 to-indigo-600">{designSectionData.title}</GradientText>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            لأن أول انطباع... لا يُمنح مرتين
+            {designSectionData.subtitle}
           </p>
         </motion.div>
 

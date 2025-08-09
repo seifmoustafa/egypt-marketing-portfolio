@@ -5,7 +5,7 @@ import { Zap } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { FloatingCard } from "@/components/ui/floating-card"
 import { GradientText } from "@/components/ui/gradient-text"
-import { contentSections } from "@/lib/mockdata"
+import { contentSections, goalSectionData } from "@/lib/mockdata"
 
 export function GoalSection() {
   return (
@@ -19,7 +19,7 @@ export function GoalSection() {
         >
           <div className="inline-flex items-center gap-3 bg-purple-100 text-purple-800 px-6 py-3 rounded-full text-sm font-semibold mb-8">
             <Zap className="w-5 h-5" />
-            هدفنا الاستراتيجي
+            {goalSectionData.badge}
           </div>
           <h2 className="text-5xl md:text-7xl font-bold">
             <GradientText gradient="from-purple-600 to-pink-600">{contentSections.goal.title}</GradientText>

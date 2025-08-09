@@ -5,7 +5,7 @@ import { Heart, BarChart3, Shield, Eye, Star, TrendingUp, Users, Search, MousePo
 import { Card, CardContent } from "@/components/ui/card"
 import { FloatingCard } from "@/components/ui/floating-card"
 import { GradientText } from "@/components/ui/gradient-text"
-import { companyValues } from "@/lib/mockdata"
+import { companyValues, valuesSectionData } from "@/lib/mockdata"
 
 const iconMap = {
   BarChart3,
@@ -66,10 +66,10 @@ export function ValuesSection() {
         >
           <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-xl text-white px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-white/20">
             <Heart className="w-5 h-5 text-red-400" />
-            قيمنا الجوهرية
+            {valuesSectionData.badge}
           </div>
           <h2 className="text-5xl md:text-7xl font-bold mb-8">
-            <GradientText gradient="from-white to-gray-300">القيم التي نؤمن بها</GradientText>
+            <GradientText gradient="from-white to-gray-300">{valuesSectionData.title}</GradientText>
           </h2>
         </motion.div>
 

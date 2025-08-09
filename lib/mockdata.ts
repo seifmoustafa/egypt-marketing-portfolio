@@ -584,6 +584,34 @@ export const heroSectionData = {
   marketDescription: "في السوق المصري والعربي"
 };
 
+// Vision Section Data
+export const visionSectionData = {
+  badge: "رؤيتنا للمستقبل"
+};
+
+// Mission Section Data
+export const missionSectionData = {
+  badge: "مهمتنا الأساسية"
+};
+
+// Goal Section Data
+export const goalSectionData = {
+  badge: "هدفنا الاستراتيجي"
+};
+
+// Values Section Data
+export const valuesSectionData = {
+  badge: "قيمنا الجوهرية",
+  title: "القيم التي نؤمن بها"
+};
+
+// Design Section Data
+export const designSectionData = {
+  badge: "التصميم الإبداعي",
+  title: "التصميم الإبداعي والجرافيك",
+  subtitle: "لأن أول انطباع... لا يُمنح مرتين"
+};
+
 // Services Section Data
 export const servicesSectionData = {
   badge: "خدماتنا المتميزة",
@@ -607,6 +635,10 @@ export const developmentSectionData = {
 
 // Portfolio Section Data
 export const portfolioSectionData = {
+  badge: "إنجازاتنا",
+  title: "سابقة أعمالنا",
+  subtitle: "على مدار أكثر من {totalProjects} مشروع في السوق المصري والعربي",
+  description: "عملنا مع مجموعة واسعة من العملاء في مختلف القطاعات، مما أكسبنا خبرة عملية عميقة، ومهارة في تخصيص الحلول التسويقية بما يتناسب مع طبيعة كل نشاط.",
   conclusionText: "تنوّع القطاعات التي تعاملنا معها يعكس مرونتنا وفهمنا العميق للسوق، وقدرتنا على تقديم حلول واقعية وقابلة للتنفيذ، مهما اختلف النشاط أو حجم المشروع."
 };
 
@@ -659,6 +691,11 @@ export default {
   workingSystemSteps,
   headerTexts,
   heroSectionData,
+  visionSectionData,
+  missionSectionData,
+  goalSectionData,
+  valuesSectionData,
+  designSectionData,
   servicesSectionData,
   productionSectionData,
   developmentSectionData,

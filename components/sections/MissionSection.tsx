@@ -5,7 +5,7 @@ import { Target } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { FloatingCard } from "@/components/ui/floating-card"
 import { GradientText } from "@/components/ui/gradient-text"
-import { contentSections } from "@/lib/mockdata"
+import { contentSections, missionSectionData } from "@/lib/mockdata"
 
 export function MissionSection() {
   return (
@@ -23,7 +23,7 @@ export function MissionSection() {
         >
           <div className="inline-flex items-center gap-3 bg-green-100 text-green-800 px-6 py-3 rounded-full text-sm font-semibold mb-8">
             <Target className="w-5 h-5" />
-            مهمتنا الأساسية
+            {missionSectionData.badge}
           </div>
           <h2 className="text-5xl md:text-7xl font-bold">
             <GradientText gradient="from-green-600 to-teal-600">{contentSections.mission.title}</GradientText>
