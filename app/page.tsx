@@ -48,6 +48,7 @@ import {
   portfolioData,
   companyValues,
   mainServices,
+  designServices,
   productionServices,
   developmentServices,
   performanceMetrics,
@@ -138,12 +139,12 @@ export default function Portfolio() {
             : "bg-black/20 backdrop-blur-2xl py-6 border-b border-white/10"
         }`}
       >
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between">
-            {/* Enhanced Logo with Better Visibility */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-2 sm:gap-4 lg:gap-6">
+            {/* Logo - First Component with Responsive Design */}
             <motion.div
-              className="flex items-center gap-5"
-              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-2 sm:gap-3 flex-shrink-0"
+              whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
               <div className="relative group">
@@ -158,41 +159,51 @@ export default function Portfolio() {
                     repeat: Number.POSITIVE_INFINITY,
                     ease: "easeInOut",
                   }}
-                  className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-40 group-hover:opacity-80 transition-opacity duration-500"
+                  className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl opacity-40 group-hover:opacity-80 transition-opacity duration-500"
                 />
 
-                {/* Logo Container with Enhanced Design */}
+                {/* Logo Container with Responsive Design */}
                 <div
                   className={`relative transition-all duration-500 ${
                     isScrolled
-                      ? "bg-white rounded-2xl p-3 shadow-xl border border-gray-200/50"
-                      : "bg-white/25 backdrop-blur-2xl rounded-3xl p-4 shadow-2xl border border-white/40"
+                      ? "bg-white rounded-xl sm:rounded-2xl p-2 sm:p-3 lg:p-4 shadow-lg sm:shadow-xl border border-gray-200/50"
+                      : "bg-white/25 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-3 sm:p-4 lg:p-5 shadow-xl sm:shadow-2xl border border-white/40"
                   }`}
                 >
                   <Image
                     src="/logo-transparent.png"
                     alt={companyInfo.name}
-                    width={140}
-                    height={90}
-                    className={`transition-all duration-500 ${isScrolled ? "h-10 w-auto" : "h-14 w-auto"}`}
+                    width={160}
+                    height={100}
+                    className={`transition-all duration-500 ${
+                      isScrolled 
+                        ? "h-6 sm:h-8 lg:h-10 w-auto" 
+                        : "h-8 sm:h-10 lg:h-12 w-auto"
+                    }`}
+                    priority
                   />
 
-                  {/* Sparkle Effect */}
+                  {/* Enhanced Sparkle Effects */}
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-                    className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full opacity-80"
+                    className="absolute -top-0.5 -right-0.5 w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full opacity-80"
+                  />
+                  <motion.div
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 12, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                    className="absolute -bottom-0.5 -left-0.5 w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-3 lg:h-3 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full opacity-60"
                   />
                 </div>
               </div>
 
-              {/* Enhanced Company Name with Better Contrast */}
+              {/* Company Name - Responsive Visibility */}
               <div className="hidden md:block">
                 <motion.h1
-                  className={`font-bold transition-all duration-500 whitespace-nowrap ${
+                  className={`font-bold transition-all duration-500 ${
                     isScrolled
-                      ? "text-lg bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent"
-                      : "text-xl text-white drop-shadow-2xl"
+                      ? "text-base sm:text-lg lg:text-xl bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent"
+                      : "text-lg sm:text-xl lg:text-2xl text-white drop-shadow-2xl"
                   }`}
                   whileHover={{ scale: 1.02 }}
                   style={{ textShadow: isScrolled ? "none" : "0 2px 4px rgba(0,0,0,0.5)" }}
@@ -200,7 +211,7 @@ export default function Portfolio() {
                   {companyInfo.name}
                 </motion.h1>
                 <motion.p
-                  className={`text-sm font-medium transition-all duration-500 whitespace-nowrap ${
+                  className={`text-xs sm:text-sm font-medium transition-all duration-500 ${
                     isScrolled ? "text-blue-600" : "text-blue-200 drop-shadow-lg"
                   }`}
                   initial={{ opacity: 0, y: 5 }}
@@ -213,27 +224,27 @@ export default function Portfolio() {
               </div>
             </motion.div>
 
-            {/* Enhanced Desktop Navigation with Better Visibility */}
-            <nav className="hidden xl:flex items-center gap-2">
+            {/* Responsive Desktop Navigation */}
+            <nav className="hidden xl:flex items-center flex-1 justify-center mx-2">
               <div
-                className={`flex items-center gap-2 rounded-full px-3 py-2 transition-all duration-500 ${
+                className={`flex items-center gap-1 xl:gap-1.5 rounded-full px-2 xl:px-3 py-1.5 xl:py-2 transition-all duration-500 overflow-hidden ${
                   isScrolled
-                    ? "bg-gray-50/80 backdrop-blur-xl shadow-xl border border-gray-200/50"
-                    : "bg-white/25 backdrop-blur-2xl shadow-2xl border border-white/40"
+                    ? "bg-gray-50/80 backdrop-blur-xl shadow-lg border border-gray-200/50"
+                    : "bg-white/25 backdrop-blur-2xl shadow-xl border border-white/40"
                 }`}
               >
                 {sections.slice(0, 8).map((s, i) => (
                   <motion.button
                     key={s.id}
                     onClick={() => scrollToSection(s.id)}
-                    className={`px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden group whitespace-nowrap ${
+                    className={`px-2 xl:px-3 py-1.5 xl:py-2 rounded-full text-xs xl:text-sm font-medium xl:font-semibold transition-all duration-300 relative overflow-hidden group ${
                       activeSection === s.id
-                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
+                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-sm"
                         : isScrolled
-                          ? "text-gray-700 hover:bg-white hover:shadow-md"
+                          ? "text-gray-700 hover:bg-white hover:shadow-sm"
                           : "text-white hover:bg-white/30 drop-shadow-lg"
                     }`}
-                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -244,34 +255,34 @@ export default function Portfolio() {
                   >
                     {/* Button Glow Effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-full" />
-                    <span className="relative z-10">{s.title}</span>
+                    <span className="relative z-10 truncate max-w-[70px] xl:max-w-none">{s.title}</span>
                   </motion.button>
                 ))}
               </div>
             </nav>
 
-            {/* Enhanced CTA Button with Better Visibility */}
-            <div className="hidden lg:flex">
+            {/* Compact Contact Button - Responsive */}
+            <div className="flex flex-shrink-0">
               <MagneticButton
                 onClick={() => scrollToSection("contact")}
-                className={`group relative overflow-hidden rounded-full font-bold shadow-2xl transition-all duration-500 ${
+                className={`group relative overflow-hidden rounded-full font-medium shadow-sm transition-all duration-500 ${
                   isScrolled
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 hover:shadow-blue-500/30"
-                    : "bg-white/30 backdrop-blur-xl border-2 border-white/50 text-white px-10 py-5 hover:bg-white/40 shadow-white/20"
+                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white px-2 sm:px-3 lg:px-4 py-1.5 sm:py-2 hover:shadow-blue-500/30 text-xs"
+                    : "bg-white/30 backdrop-blur-xl border border-white/50 text-white px-3 sm:px-4 lg:px-5 py-2 sm:py-2.5 hover:bg-white/40 shadow-white/20 text-xs"
                 }`}
               >
                 {/* Button Background Animation */}
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
 
                 <span
-                  className="relative z-10 flex items-center gap-3 whitespace-nowrap"
+                  className="relative z-10 flex items-center gap-1 sm:gap-1.5"
                   style={{
                     textShadow: isScrolled ? "none" : "0 1px 2px rgba(0,0,0,0.3)",
                   }}
                 >
-                  <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-                  {headerTexts.contactButton}
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  <Phone className="w-3 h-3 sm:w-4 sm:h-4 group-hover:rotate-12 transition-transform duration-300" />
+                  <span className="hidden lg:inline">{headerTexts.contactButton}</span>
+                  <span className="lg:hidden">اتصل</span>
                 </span>
 
                 {/* Shine Effect */}
@@ -283,13 +294,13 @@ export default function Portfolio() {
               </MagneticButton>
             </div>
 
-            {/* Enhanced Mobile Menu Button with Better Visibility */}
+            {/* Responsive Mobile Menu Button */}
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`xl:hidden relative w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 ${
+              className={`lg:hidden relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center transition-all duration-300 flex-shrink-0 ${
                 isScrolled
-                  ? "bg-white shadow-xl border border-gray-200/50"
-                  : "bg-white/30 backdrop-blur-xl border-2 border-white/50 shadow-2xl"
+                  ? "bg-white shadow-lg sm:shadow-xl border border-gray-200/50"
+                  : "bg-white/30 backdrop-blur-xl border border-white/50 sm:border-2 shadow-xl sm:shadow-2xl"
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -898,14 +909,37 @@ export default function Portfolio() {
                   return (
                     <FloatingCard key={i} index={i} className="group">
                       <Card className="bg-white border-0 shadow-xl hover:shadow-2xl transition-all duration-500 h-full overflow-hidden">
-                        <div className={`bg-gradient-to-r ${service.color} text-white p-8`}>
-                          <div className="flex items-center gap-3 mb-4">
-                            {Icon && <Icon className="w-8 h-8" />}
-                            <h3 className="text-xl font-bold">{service.title}</h3>
+                        <CardContent className="p-0">
+                          {/* Header with Icon and Title - Fixed Height */}
+                          <div className={`bg-gradient-to-br ${service.color} text-white p-8 relative overflow-hidden h-48 flex flex-col justify-center`}>
+                            {/* Enhanced Background Pattern */}
+                            <div className="absolute inset-0 bg-black/15"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent"></div>
+                            
+                            <div className="relative z-10">
+                              <div className="flex items-center gap-4 mb-6">
+                                <div className="bg-white/30 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/30">
+                                  {Icon && <Icon className="w-8 h-8 text-white drop-shadow-xl" />}
+                                </div>
+                                <h3 className="text-2xl font-bold leading-tight text-white drop-shadow-xl">{service.title}</h3>
+                              </div>
+                              <p className="text-white text-lg leading-relaxed drop-shadow-lg font-medium">{service.desc}</p>
+                            </div>
                           </div>
-                        </div>
-                        <CardContent className="p-8">
-                          <p className="text-gray-700 leading-relaxed">{service.desc}</p>
+                          
+                          {/* Content Area */}
+                          <div className="p-8 bg-gradient-to-b from-white to-gray-50">
+                            <div className="space-y-4">
+                              {service.items?.map((item, idx) => (
+                                <div key={idx} className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
+                                  <div className="bg-gradient-to-br from-emerald-500 to-green-600 rounded-full p-2.5 mt-0.5 flex-shrink-0 shadow-lg">
+                                    <CheckCircle className="w-5 h-5 text-white" />
+                                  </div>
+                                  <span className="text-base text-gray-900 leading-relaxed font-semibold">{item}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
                         </CardContent>
                       </Card>
                     </FloatingCard>
@@ -916,8 +950,8 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Production Section */}
-        <section id="production" className="py-32 bg-gradient-to-br from-red-50 to-pink-50">
+        {/* Design Section */}
+        <section id="design" className="py-32 bg-gradient-to-br from-purple-50 to-indigo-50 relative overflow-hidden">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -925,14 +959,73 @@ export default function Portfolio() {
               viewport={{ once: true }}
               className="text-center mb-20"
             >
-              <div className="inline-flex items-center gap-3 bg-red-100 text-red-800 px-6 py-3 rounded-full text-sm font-semibold mb-8">
-                <Video className="w-5 h-5" />
+              <div className="inline-flex items-center gap-3 bg-purple-100 text-purple-800 px-6 py-3 rounded-full text-sm font-semibold mb-8">
+                <Sparkles className="w-5 h-5" />
+                التصميم الإبداعي
+              </div>
+              <h2 className="text-5xl md:text-7xl font-bold mb-8">
+                <GradientText gradient="from-purple-600 to-indigo-600">التصميم الإبداعي والجرافيك</GradientText>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                لأن أول انطباع... لا يُمنح مرتين
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {designServices.map((service, i) => {
+                return (
+                  <FloatingCard key={i} index={i} className="group">
+                    <Card className="bg-white border-0 shadow-xl hover:shadow-2xl transition-all duration-500 h-full overflow-hidden">
+                      <div className="bg-gradient-to-br from-purple-600 to-indigo-600 text-white p-8">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="text-4xl">{service.icon}</div>
+                          <h3 className="text-xl font-bold">{service.title}</h3>
+                        </div>
+                        <p className="text-purple-100 text-sm">{service.desc}</p>
+                      </div>
+                      <CardContent className="p-8">
+                        <ul className="space-y-3">
+                          {service.items?.map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-3">
+                              <div className="bg-purple-100 rounded-full p-1 mt-1">
+                                <CheckCircle className="w-3 h-3 text-purple-600" />
+                              </div>
+                              <span className="text-sm text-gray-700">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </FloatingCard>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Production Section - Enhanced Design */}
+        <section id="production" className="py-32 bg-gradient-to-br from-red-50 via-pink-50 to-rose-50 relative overflow-hidden">
+          {/* Background Decorations */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 right-20 w-96 h-96 bg-red-500/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-20 left-20 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl" />
+          </div>
+
+          <div className="container mx-auto px-6 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-20"
+            >
+              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-red-100 to-pink-100 text-red-800 px-8 py-4 rounded-full text-sm font-semibold mb-8 shadow-lg border border-red-200">
+                <Video className="w-6 h-6" />
                 {productionSectionData.badge}
               </div>
               <h2 className="text-5xl md:text-7xl font-bold mb-8">
-                <GradientText gradient="from-red-600 to-pink-600">{productionSectionData.title}</GradientText>
+                <GradientText gradient="from-red-600 via-pink-600 to-rose-600">{productionSectionData.title}</GradientText>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
                 {productionSectionData.subtitle}
               </p>
             </motion.div>
@@ -943,24 +1036,63 @@ export default function Portfolio() {
                 return (
                   <FloatingCard key={i} index={i} className="group">
                     <Card className="bg-white border-0 shadow-xl hover:shadow-2xl transition-all duration-500 h-full overflow-hidden">
-                      <div className={`${service.color} text-white p-8`}>
-                        <div className="flex items-center gap-3 mb-4">
-                          {Icon && <Icon className="w-8 h-8" />}
-                          <h3 className="text-xl font-bold">{service.title}</h3>
+                      {/* Enhanced Header with Fixed Height */}
+                      <div className={`bg-gradient-to-br ${service.color} text-white p-8 relative overflow-hidden h-52 flex flex-col justify-center`}>
+                        {/* Background Effects */}
+                        <div className="absolute inset-0 bg-black/15"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent"></div>
+                        
+                        {/* Floating Particles */}
+                        {[...Array(3)].map((_, idx) => (
+                          <motion.div
+                            key={idx}
+                            className="absolute w-2 h-2 bg-white/30 rounded-full"
+                            style={{
+                              left: `${20 + idx * 30}%`,
+                              top: `${20 + idx * 20}%`,
+                            }}
+                            animate={{
+                              y: [0, -10, 0],
+                              opacity: [0.3, 0.8, 0.3],
+                            }}
+                            transition={{
+                              duration: 2 + idx * 0.5,
+                              repeat: Number.POSITIVE_INFINITY,
+                              delay: idx * 0.3,
+                            }}
+                          />
+                        ))}
+
+                        <div className="relative z-10">
+                          <div className="flex items-center gap-4 mb-6">
+                            <div className="bg-white/30 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/30">
+                              {Icon && <Icon className="w-8 h-8 text-white drop-shadow-xl" />}
+                            </div>
+                            <h3 className="text-2xl font-bold leading-tight text-white drop-shadow-xl">{service.title}</h3>
+                          </div>
+                          <p className="text-white text-lg leading-relaxed drop-shadow-lg font-medium">{service.desc}</p>
                         </div>
-                        <p className="text-white/90 text-sm">{service.desc}</p>
                       </div>
-                      <CardContent className="p-8">
-                        <ul className="space-y-3">
+
+                      {/* Enhanced Content Area */}
+                      <CardContent className="p-8 bg-gradient-to-b from-white to-gray-50">
+                        <div className="space-y-4">
                           {service.items?.map((item, idx) => (
-                            <li key={idx} className="flex items-start gap-3">
-                              <div className="bg-green-100 rounded-full p-1 mt-1">
-                                <CheckCircle className="w-3 h-3 text-green-600" />
+                            <motion.div
+                              key={idx}
+                              initial={{ opacity: 0, x: -20 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ delay: idx * 0.1 }}
+                              className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group"
+                            >
+                              <div className="bg-gradient-to-br from-emerald-500 to-green-600 rounded-full p-2.5 mt-0.5 flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <CheckCircle className="w-5 h-5 text-white" />
                               </div>
-                              <span className="text-sm text-gray-700">{item}</span>
-                            </li>
+                              <span className="text-base text-gray-900 leading-relaxed font-semibold group-hover:text-gray-800 transition-colors">{item}</span>
+                            </motion.div>
                           ))}
-                        </ul>
+                        </div>
                       </CardContent>
                     </Card>
                   </FloatingCard>
